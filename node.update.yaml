@@ -1,16 +1,15 @@
 ---
- - hosts: host-group
+ - hosts: host
    tasks:
    - name: add apt key for nodesource
      apt_key:
           url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-          validate_certs: False
-#     register: key
+#          validate_certs: False
 
    - name: add repo for nodesource
      apt_repository:
           repo: deb https://deb.nodesource.com/node_8.x trusty main
-          validate_certs: False
+#          validate_certs: False
           state: present
 
    - name: install nodejs
